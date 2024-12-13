@@ -1,0 +1,21 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df=pd.read_csv('Sample DataSet.csv')
+print(df.head())
+
+plt.figure(figsize=(8,6))
+sns.countplot(data=df, x='Gender', palette='viridis')
+plt.title('Gender Distribution ')
+plt.xlabel('Gender')
+plt.ylabel('Count')
+plt.show()
+
+
+plt.figure(figsize=(8,6))
+sns.histplot(df['Age'].dropna(), bins=5, kde=True, color='blue')
+plt.title('Age Distribution')
+plt.xlabel('Age')
+plt.ylabel('Frequency')
+plt.show()
